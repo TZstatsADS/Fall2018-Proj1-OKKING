@@ -160,13 +160,16 @@ It is easy to realize that the under25 wordcloud. Since the people in this group
 
 
 ### Word Cloud of age group 25~30
-```{r}
-wordcloud2(word_25_30[4:15,], size = 0.3, minSize = 0, gridSize =  0,
-    fontFamily = 'Segoe UI', fontWeight = 'bold',
-    color = 'random-dark', backgroundColor = "white",
-    minRotation = -pi/4, maxRotation = pi/4, shuffle = TRUE,
-    rotateRatio = 0.4, shape = 'circle', ellipticity = 0.65,
-    widgetsize = NULL, figPath = NULL, hoverFunction = NULL)
+```{r,message=FALSE,warning=FALSE}
+wordcloud(word_25_30$word[4:30], word_25_30$n[4:30],
+          scale=c(5,0.5),
+          max.words=30,
+          min.freq=300,
+          random.order=FALSE,
+          rot.per=0.3,
+          use.r.layout=T,
+          random.color=F£¬
+          colors=brewer.pal(9,"Reds"))
 ```
 
 There are not much difference between the wordcloud of "25~30" and "under 25". Since the people in this age group are majority young labors. They basically have the samilar interets as the people in the group under 25. We can see a lot of common word between these two wordclouds. Such as "moment", "job", "love" and "family" and so on. But the word "school" disappears in the wordcloud.
@@ -175,13 +178,16 @@ There are not much difference between the wordcloud of "25~30" and "under 25". S
 
 
 ### Word Cloud of age group 30~40
-```{r}
-wordcloud2(word_30_40[4:15,], size = 0.3, minSize = 0, gridSize =  0,
-    fontFamily = 'Segoe UI', fontWeight = 'bold',
-    color = 'random-dark', backgroundColor = "white",
-    minRotation = -pi/4, maxRotation = pi/4, shuffle = TRUE,
-    rotateRatio = 0.4, shape = 'circle', ellipticity = 0.65,
-    widgetsize = NULL, figPath = NULL, hoverFunction = NULL)
+```{r,message=FALSE,warning=FALSE}
+wordcloud(word_30_40$word[4:30], word_25_30$n[4:30],
+          scale=c(5,0.5),
+          max.words=30,
+          min.freq=300,
+          random.order=FALSE,
+          rot.per=0.3,
+          use.r.layout=T,
+          random.color=F£¬
+          colors=brewer.pal(9,"Greens"))
 ```
 In the "30~40" wordcloud, there are some words first appear. "Son", "wife","daughter" and "husband" are first appear here. Because the people in this group are become parents and get married. 
 
@@ -190,13 +196,16 @@ In the "30~40" wordcloud, there are some words first appear. "Son", "wife","daug
 
 
 ### Word Cloud of age group 40 above
-```{r}
-wordcloud2(word_40above[4:15,], size = 0.3, minSize = 0, gridSize =  0,
-    fontFamily = 'Segoe UI', fontWeight = 'bold',
-    color = 'random-dark', backgroundColor = "white",
-    minRotation = -pi/4, maxRotation = pi/4, shuffle = TRUE,
-    rotateRatio = 0.4, shape = 'circle', ellipticity = 0.65,
-    widgetsize = NULL, figPath = NULL, hoverFunction = NULL)
+```{r,message=FALSE,warning=FALSE}
+wordcloud(word_40above$word[4:30], word_40above$n[4:30],
+          scale=c(5,0.5),
+          max.words=30,
+          min.freq=300,
+          random.order=FALSE,
+          rot.per=0.3,
+          use.r.layout=T,
+          random.color=F£¬
+          colors=brewer.pal(9,"Blues"))
 ```
 
 The wordcloud of "40above" group is similar to the wordcloud of "30~40". This result is rationally correct, since the people in these group are still parents. But "son" and "daughter" contribute the most two frequencies in this group. This may be indicate that old parents care more about their children.
