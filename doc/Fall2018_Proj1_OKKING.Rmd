@@ -2,7 +2,11 @@
 title: "Happy Moments"
 author: "Jay Mu jm4610"
 date: "September 9, 2018"
-output: html_document
+output:
+  prettydoc::html_pretty:
+    css: style.css
+    highlight: github
+    theme: cayman
 ---
 
 # Introduction
@@ -16,6 +20,7 @@ Then, I did basic topic modeling for the 4 group by using LDA method.
 # Step 0: Loading Package
 Load all packages I need for this project!
 ```{r, warning=FALSE,message=FALSE}
+library(prettydoc)
 library(ggplot2)
 library(gridExtra)
 library(tidytext)
@@ -99,6 +104,8 @@ ggplot(happy, aes(x=age)) +
                                 colour = "white"))+
   xlim(min = 0, max = 100)
 ```
+
+
 From the histogram, it is clear that the graph is left skewed shape. Therefore, in order to have balance sample size for each group, the younger age groups should have shorter interval than older age groups.
 The following is my groups after balancing the sample sizes. 
 ```{r,message=FALSE}
@@ -263,6 +270,9 @@ barplot(colSums(table(nrc_senti_40above)), col = "purple",
         border = NA, cex.names=0.7)
 
 ```
+
+
+
 From the histograms, we saw that the sentiments distributions for 4 groups are simillar. "Positive" and "Negative" words are the most 2 common categories among all of the 4 groups. "surprise" and "disgust" appear less frequent among all of the 4 groups. The other categries in all of the 4 groups are relatively close to each other. 
 
 
